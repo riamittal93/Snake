@@ -9,4 +9,4 @@ Windows Command Line to install pygame:
 
 1. py -m pip install --upgrade setuptools
 2. py -m pip install -U pygame --user
-3. py my_game.py
+3. py snake.py
