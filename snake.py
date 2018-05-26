@@ -4,7 +4,7 @@ speed = 2
 growth = 10
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-size = width, height = 640, 480
+ScreenSize = width, height = 640, 480
 # Direction of snake: 0 = right, 1 = up, 2 = left, 3 = down
 
 class Snake:
@@ -69,11 +69,7 @@ class Snake:
         if self.position[1] < 0:
             self.position[1] = height
             
-          
-
-
-
-        
+                 
 
 class FoodPellet:
     def __init__(self):
@@ -91,7 +87,7 @@ def main():
 
 
     
-    screen = pygame.display.set_mode(size)
+    screen = pygame.display.set_mode(ScreenSize)
 
     snake = Snake()
 
