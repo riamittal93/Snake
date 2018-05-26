@@ -4,6 +4,7 @@ speed = 2
 growth = 10
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+size = width, height = 640, 480
 # Direction of snake: 0 = right, 1 = up, 2 = left, 3 = down
 
 class Snake:
@@ -37,6 +38,8 @@ class Snake:
         if self.direction == 3:
             tail = [head[0], head[1] - self.length]
 
+       
+            
         pygame.draw.line(screen, WHITE, head, tail, self.width)
 
     def move_forward(self):
@@ -51,6 +54,26 @@ class Snake:
 
         if self.direction == 3:
             self.position[1] += speed
+
+        if self.position[0] > width:
+            self.position[0] = 0
+
+        if self.position[0] < 0:
+            self.position[0] = width
+            
+
+        if self.position[1] > height:
+            self.position[1] = 0
+           
+
+        if self.position[1] < 0:
+            self.position[1] = height
+            
+          
+
+
+
+        
 
 class FoodPellet:
     def __init__(self):
@@ -67,7 +90,7 @@ def main():
     pygame.init()
 
 
-    size = width, height = 640, 480
+    
     screen = pygame.display.set_mode(size)
 
     snake = Snake()
