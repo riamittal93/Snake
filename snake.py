@@ -20,15 +20,18 @@ class Snake:
         self.speed = 2
 
     def turn_left(self):
-        self.direction += 1
-        if self.direction > 3:
-            self.direction = 0
-
+        self.direction = 2
+        
     def turn_right(self):
-        self.direction -= 1
-        if self.direction < 0:
-            self.direction = 3
-
+        self.direction = 0
+        
+    def turn_up(self):
+        self.direction = 1
+                    
+    def turn_down(self):
+        self.direction = 3
+        
+        
     def draw(self, screen):
         head = self.position
         if self.direction == 0:
@@ -122,6 +125,11 @@ def main():
                     snake.turn_left()
                 if event.key == pygame.K_RIGHT:
                     snake.turn_right()
+                if event.key == pygame.K_UP:
+                    snake.turn_up()
+                if event.key == pygame.K_DOWN:
+                    snake.turn_down()
+                
 
         screen.fill(colors['BLACK'])
 
