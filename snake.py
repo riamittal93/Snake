@@ -16,7 +16,7 @@ class Snake:
         self.direction = 0
         self.length = 30
         self.width = 5
-        self.growth = 10
+        self.growth = 2
         self.speed = 2
 
     def turn_left(self):
@@ -70,7 +70,9 @@ class Snake:
 
         if self.position[1] < 0:
             self.position[1] = height
-            
+
+    def grow_when_eat(self):
+        self.length += self.growth
                  
 
 class FoodPellet:
@@ -127,6 +129,7 @@ def main():
 
         if is_eating(snake, food):
             score += score_per_food
+            snake.grow_when_eat()
 
         def draw_everything():
             food.draw(screen)
