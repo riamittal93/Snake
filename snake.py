@@ -127,6 +127,7 @@ def main():
 
         if is_eating(snake, food):
             score += score_per_food
+            snake.length += 2
 
         def draw_everything():
             food.draw(screen)
